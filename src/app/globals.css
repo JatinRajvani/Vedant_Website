@@ -2,25 +2,68 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f172a; /* Slate 900 */
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  
+  /* Brand Theme Colors */
+  --color-brand-blue-50: #f0f7ff;
+  --color-brand-blue-100: #e0effe;
+  --color-brand-blue-200: #bae0fd;
+  --color-brand-blue-300: #7cc7fb;
+  --color-brand-blue-400: #38a9f8;
+  --color-brand-blue-500: #0e8fe3;
+  --color-brand-blue-600: #0271c2;
+  --color-brand-blue-700: #035aa2;
+  --color-brand-blue-800: #074c85;
+  --color-brand-blue-900: #0c406e;
+  --color-brand-blue-950: #07294a;
+
+  --color-brand-red-50: #fff1f2;
+  --color-brand-red-100: #ffe4e6;
+  --color-brand-red-200: #fecdd3;
+  --color-brand-red-300: #fda4af;
+  --color-brand-red-400: #fb7185;
+  --color-brand-red-500: #f43f5e;
+  --color-brand-red-600: #e11d48;
+  --color-brand-red-700: #be123c;
+  --color-brand-red-800: #9f1239;
+  --color-brand-red-900: #881337;
+  --color-brand-red-950: #4c0519;
+
+  --color-brand-blue: #1e3a8a;
+  --color-brand-red: #ef4444;
+  --color-brand-dark: #0f172a;
+  --color-brand-light: #f8fafc;
+
+  /* Custom Typography and Animations */
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #090d16;
+    --foreground: #f8fafc;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
 }
+
+/* Accessibility & Utility styles */
+.focus-ring {
+  outline: none;
+  transition: box-shadow 0.15s ease-in-out;
+}
+.focus-ring:focus-visible {
+  box-shadow: 0 0 0 2px var(--background), 0 0 0 4px #1e3a8a;
+}
+
