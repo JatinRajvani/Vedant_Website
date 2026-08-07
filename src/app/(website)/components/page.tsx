@@ -413,12 +413,12 @@ export default function ComponentPreviewPage() {
               </div>
 
               <div className="space-y-2">
-                <span className="text-xs text-zinc-400 font-mono">TestimonialCard</span>
+                <span className="text-xs text-zinc-400 font-mono">TestimonialCard (with Video)</span>
                 <TestimonialCard
                   name="Karan Shah"
                   course="CMA Final Qualifier"
                   text="Vedant Academy helped me build strong concepts and crack CMA in my first attempt. The faculty support system and Sunil Sir's mentoring is excellent!"
-                  rating={5}
+                  youtubeId="dQw4w9WgXcQ"
                 />
               </div>
             </div>
@@ -443,7 +443,8 @@ export default function ComponentPreviewPage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="space-y-2">
                 <span className="text-xs text-zinc-400 font-mono">StatisticCard (Floating/Hero badge)</span>
-                <div className="bg-zinc-100 dark:bg-zinc-800 p-6 rounded-xl flex items-center justify-center h-48">
+                <div className="bg-gradient-to-br from-brand-blue-900 via-brand-blue-800 to-brand-blue-950 p-6 rounded-xl flex items-center justify-center h-48 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
                   <StatisticCard
                     value="95%+"
                     label="Passing Success Rate"
