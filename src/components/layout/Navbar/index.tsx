@@ -75,11 +75,8 @@ export default function Navbar() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-4">
-            <Button variant="outline" size="sm" href="/contact">
-              Inquire Now
-            </Button>
             <Button variant="secondary" size="sm" href="/contact">
-              Book a Free Demo
+              Inquire Now
             </Button>
           </div>
 
@@ -147,11 +144,8 @@ export default function Navbar() {
         </nav>
 
         <div className="mt-auto pt-6 border-t border-zinc-100 dark:border-zinc-800 flex flex-col gap-3">
-          <Button variant="outline" className="w-full" href="/contact">
-            Inquire Now
-          </Button>
           <Button variant="secondary" className="w-full" href="/contact">
-            Book a Free Demo
+            Inquire Now
           </Button>
         </div>
       </div>
