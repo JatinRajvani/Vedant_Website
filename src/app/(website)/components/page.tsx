@@ -6,6 +6,8 @@ import Button from "@/components/foundation/Button";
 import Card from "@/components/foundation/Card";
 import Container from "@/components/foundation/Container";
 import Section from "@/components/foundation/Section";
+import Breadcrumb from "@/components/layout/Breadcrumb";
+import Logo from "@/components/layout/Logo";
 
 export default function ComponentPreviewPage() {
   const [btnLoading, setBtnLoading] = useState(false);
@@ -319,6 +321,51 @@ export default function ComponentPreviewPage() {
                 </Container>
               </Section>
             </div>
+          </div>
+        </section>
+
+        {/* 5. Layout & Navigation Mappings */}
+        <section aria-labelledby="layouts-heading">
+          <div className="border-b border-zinc-200 dark:border-zinc-800 pb-4 mb-8">
+            <Typography variant="h2" id="layouts-heading">
+              5. Layout & Navigation Mappings
+            </Typography>
+            <Typography variant="body" className="text-zinc-500 mt-1">
+              Supports dynamic breadcrumb trail path resolution and logo variations.
+            </Typography>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card variant="default" className="space-y-4">
+              <Typography variant="h3">Breadcrumb Isolation</Typography>
+              <Typography variant="body" className="text-sm">
+                Renders a semantic trail. If no properties are specified, it dynamically reads the browser pathname.
+              </Typography>
+              <div className="bg-zinc-50 dark:bg-zinc-900/50 p-4 rounded-xl border border-zinc-100 dark:border-zinc-800">
+                <Breadcrumb items={[
+                  { label: "Home", href: "/" },
+                  { label: "Courses Offered", href: "/courses" },
+                  { label: "CMA Foundation Details" }
+                ]} />
+              </div>
+            </Card>
+
+            <Card variant="default" className="space-y-4">
+              <Typography variant="h3">Logo Branding Configurations</Typography>
+              <Typography variant="body" className="text-sm">
+                Variations supporting header/footer placements and dark/light modes.
+              </Typography>
+              <div className="flex flex-col gap-4">
+                <div className="p-4 bg-white dark:bg-zinc-900 rounded-xl border border-zinc-100 dark:border-zinc-800 flex items-center justify-between">
+                  <span className="text-xs font-mono text-zinc-400">default</span>
+                  <Logo variant="default" />
+                </div>
+                <div className="p-4 bg-zinc-900 rounded-xl flex items-center justify-between">
+                  <span className="text-xs font-mono text-zinc-600">white</span>
+                  <Logo variant="white" />
+                </div>
+              </div>
+            </Card>
           </div>
         </section>
       </Container>
