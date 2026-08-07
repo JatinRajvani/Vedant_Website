@@ -33,14 +33,14 @@ export default function ResultCard({
       className="flex flex-col items-center text-center p-6 bg-white dark:bg-zinc-900 border border-zinc-50 dark:border-zinc-800"
     >
       {/* 1. Portrait Circle frame with Overlay Rank badge */}
-      <div className="relative h-28 w-28 shrink-0 mb-4">
+      <div className="relative h-36 w-36 shrink-0 mb-5">
         <div className="relative h-full w-full rounded-full overflow-hidden border-4 border-zinc-100 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-800">
           {imageSrc ? (
             <Image
               src={imageSrc}
               alt={name}
               fill
-              sizes="112px"
+              sizes="144px"
               className="object-cover"
             />
           ) : (
