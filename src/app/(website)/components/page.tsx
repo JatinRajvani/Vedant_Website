@@ -9,6 +9,14 @@ import Section from "@/components/foundation/Section";
 import Breadcrumb from "@/components/layout/Breadcrumb";
 import Logo from "@/components/layout/Logo";
 
+// Specialized Cards
+import CourseCard from "@/components/cards/CourseCard";
+import FacultyCard from "@/components/cards/FacultyCard";
+import ResultCard from "@/components/cards/ResultCard";
+import TestimonialCard from "@/components/cards/TestimonialCard";
+import StatisticCard from "@/components/cards/StatisticCard";
+import ContactCard from "@/components/cards/ContactCard";
+
 export default function ComponentPreviewPage() {
   const [btnLoading, setBtnLoading] = useState(false);
 
@@ -366,6 +374,116 @@ export default function ComponentPreviewPage() {
                 </div>
               </div>
             </Card>
+          </div>
+        </section>
+
+        {/* 6. Specialized Card Components */}
+        <section aria-labelledby="specialized-cards-heading">
+          <div className="border-b border-zinc-200 dark:border-zinc-800 pb-4 mb-8">
+            <Typography variant="h2" id="specialized-cards-heading">
+              6. Specialized Card Components
+            </Typography>
+            <Typography variant="body" className="text-zinc-500 mt-1">
+              Polished composites of our typography, button, and card systems designed for content grids.
+            </Typography>
+          </div>
+
+          <div className="space-y-12">
+            {/* Grid 1: CourseCard & ResultCard & TestimonialCard */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="space-y-2">
+                <span className="text-xs text-zinc-400 font-mono">CourseCard (Standard)</span>
+                <CourseCard
+                  title="CMA Intermediate"
+                  description="Advance your skills in financial management, corporate accounting, laws, and direct/indirect taxation structures."
+                  duration="6 - 8 Months"
+                  mode="Offline / Online"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <span className="text-xs text-zinc-400 font-mono">ResultCard (AIR Topper)</span>
+                <ResultCard
+                  name="Rohan Patel"
+                  rank="AIR 12"
+                  course="CMA Intermediate"
+                  score="356 / 400"
+                  year="Dec 2025"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <span className="text-xs text-zinc-400 font-mono">TestimonialCard</span>
+                <TestimonialCard
+                  name="Karan Shah"
+                  course="CMA Final Qualifier"
+                  text="Vedant Academy helped me build strong concepts and crack CMA in my first attempt. The faculty support system and Sunil Sir's mentoring is excellent!"
+                  rating={5}
+                />
+              </div>
+            </div>
+
+            {/* Grid 2: FacultyCard Horizontal (Founder) */}
+            <div className="space-y-2">
+              <span className="text-xs text-zinc-400 font-mono">FacultyCard (Horizontal / Founder style)</span>
+              <FacultyCard
+                name="CMA Sunil Sir"
+                designation="Co-Founder & Faculty"
+                experience="10+ Years of teaching experience"
+                details={[
+                  "Known for excellent conceptual clarity and interactive sessions.",
+                  "Mentored 1000+ successful CMA qualifiers in Gujarat.",
+                  "Specialist in Management Accounting and Strategic Finance."
+                ]}
+                layout="horizontal"
+              />
+            </div>
+
+            {/* Grid 3: Statistics and Contacts */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="space-y-2">
+                <span className="text-xs text-zinc-400 font-mono">StatisticCard (Floating/Hero badge)</span>
+                <div className="bg-zinc-100 dark:bg-zinc-800 p-6 rounded-xl flex items-center justify-center h-48">
+                  <StatisticCard
+                    value="95%+"
+                    label="Passing Success Rate"
+                    floating={true}
+                    layout="horizontal"
+                    icon={
+                      <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                      </svg>
+                    }
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <span className="text-xs text-zinc-400 font-mono">StatisticCard (Vertical grid stat)</span>
+                <div className="bg-zinc-50 dark:bg-zinc-900/50 p-6 rounded-xl border border-zinc-100 dark:border-zinc-800 flex items-center justify-center h-48">
+                  <StatisticCard
+                    value="1000+"
+                    label="Students Qualified"
+                    layout="vertical"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <span className="text-xs text-zinc-400 font-mono">ContactCard (HELPLINE support)</span>
+                <ContactCard
+                  title="Academy Helpline"
+                  value="Feel free to call our support line for admission inquiries.\nPhone: +91 98256 04515"
+                  icon={
+                    <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                  }
+                  href="tel:+919825604515"
+                  actionText="Call Helpline Now"
+                />
+              </div>
+            </div>
           </div>
         </section>
       </Container>
